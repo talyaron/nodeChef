@@ -1,10 +1,16 @@
+// https://nodechef-mongo-6060.nodechef.com/
+
 const express = require('express')
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000;
 const bodyParser = require('body-parser');
 var MongoClient = require('mongodb').MongoClient;
 
-var url = "mongodb://localhost:27017/mydb";
+//Local
+// var url = "mongodb://localhost:27017/mydb";
+
+//nodeChef
+var url = 'mongodb://test-6060:XAoHOB1DkyVbfQt0VtL9ZKsT1dl3Oy@db-test-6060.nodechef.com:5405/test'
 
 app.use(express.static('public'));
 
@@ -31,4 +37,4 @@ app.get('/api', (req, res) => {
     });
 })
 
-app.listen(port, () => console.log(`server listening on port ${port}!`))
+app.listen(port, () => console.log(`server listening on port ${port}!!!`))
